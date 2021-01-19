@@ -1,0 +1,2 @@
+insert into user (user_id,email, phone, user_name,user_password) values (5,"a@b.c","9988776655","user5","user123");
+insert into user (user_id,email, phone, user_name,user_password) values (4,"b@b.c","9988776655","user2","user123");
