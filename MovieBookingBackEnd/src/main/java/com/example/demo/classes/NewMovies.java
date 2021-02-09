@@ -1,40 +1,26 @@
-package com.example.demo.modal;
-
+package com.example.demo.classes;
 
 import java.util.Date;
 
-import javax.persistence.*;
 
-@Entity
-public class Movies
-{
-	@Id
-	@Column(name = "movieid")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class NewMovies {
+
 	Integer movieId;
 	
-	@Column(name = "title", length=100 , nullable = false)
 	String title;
 	
-	@Column(name = "description", length=800 , nullable = false)
 	String description;
 	
-	@Temporal(TemporalType.TIME)
 	Date duration;
 	
-	@Column(length = 50 )
 	String language;
 		
-	@Column(length = 200 )
 	String type;
 	
-	@Column(length = 500 )
 	String image;
-	
 	
 	Double rating;
 	
-	@Column(length=300)
 	String trailer;
 
 	public Integer getMovieId() {
@@ -109,14 +95,7 @@ public class Movies
 		this.trailer = trailer;
 	}
 
-	@Override
-	public String toString() {
-		return "Movies [movieId=" + movieId + ", title=" + title + ", description=" + description + ", duration="
-				+ duration + ", language=" + language + ", type=" + type + ", image=" + image + ", rating=" + rating
-				+ ", trailer=" + trailer + "]";
-	}
-
-	public Movies(Integer movieId, String title, String description, Date duration, String language, String type,
+	public NewMovies(Integer movieId, String title, String description, Date duration, String language, String type,
 			String image, Double rating, String trailer) {
 		super();
 		this.movieId = movieId;
@@ -130,19 +109,19 @@ public class Movies
 		this.trailer = trailer;
 	}
 
-	public Movies() {
+	@Override
+	public String toString() {
+		return "NewMovies [movieId=" + movieId + ", title=" + title + ", description=" + description + ", duration="
+				+ duration + ", language=" + language + ", type=" + type + ", image=" + image + ", rating=" + rating
+				+ ", trailer=" + trailer + "]";
+	}
+
+	public NewMovies() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
 	
 	
-	
-	
-	
 
-	
-	
-	
-	
 }

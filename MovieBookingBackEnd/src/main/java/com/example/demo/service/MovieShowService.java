@@ -35,39 +35,42 @@ public class MovieShowService
 	SeatRepo seatRepo;
 	
 	
-	public MovieShow addShow(ShowData showdata) 
+	public List<ShowData> addShow(List<ShowData> showsdatas) 
 	{
-		MovieShow show = new MovieShow();
 		
-		show.setDate(showdata.getDate());
-		show.setStartTime(showdata.getTime());
-		show.setPrice(showdata.getPrice());
-		Screen screen = screenrepo.getOne(showdata.getScreenid());
-		Movies movie = movierepo.getOne(showdata.getMovieid());
-		System.out.println(screen );
-		System.out.println(movie);
-		
-		show.setScreen(screen);
-		show.setMovie(movie);
-		
-		System.out.println(show);
-		
-		MovieShow movieShowDb = movieshowrepo.save(show);
-		
-		//Seats :
-		for (int j = 1; j <= screen.getTotalNoOfSeats(); j++) 
-		{				
-			Seat seat = new Seat();
-			seat.setScreen(screen);
-			seat.setSeatNumber(j);
-			seat.setMovieShow(movieShowDb);
+		for(ShowData showdata : showsdatas) {
 			
-			seatRepo.save(seat);
-		}	
+			MovieShow show = new MovieShow();
+			
+			show.setDate(showdata.getDate());
+			show.setStartTime(showdata.getTime());
+			show.setPrice(showdata.getPrice());
+			Screen screen = screenrepo.getOne(showdata.getScreenid());
+			Movies movie = movierepo.getOne(showdata.getMovieid());
+			System.out.println(screen );
+			System.out.println(movie);
+			
+			show.setScreen(screen);
+			show.setMovie(movie);
+			
+			System.out.println(show);
+			
+			MovieShow movieShowDb = movieshowrepo.save(show);
+			
+			//Seats :
+			for (int j = 1; j <= screen.getTotalNoOfSeats(); j++) 
+			{				
+				Seat seat = new Seat();
+				seat.setScreen(screen);
+				seat.setSeatNumber(j);
+				seat.setMovieShow(movieShowDb);
+				
+				seatRepo.save(seat);
+			}	
 
+		}
 		
-		
-		return movieShowDb;
+		return showsdatas;
 	
 		
 	}

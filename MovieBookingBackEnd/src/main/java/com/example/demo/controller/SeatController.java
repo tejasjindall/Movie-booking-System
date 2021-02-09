@@ -22,7 +22,6 @@ public class SeatController {
 	SeatService seatService;
 	
 	@PostMapping("/listofseats")
-//	void GetListOfSeats(@RequestBody MyShowId show)
 	List<MySeat> GetListOfSeats(@RequestBody ShowDummy show)
 	{
 		System.out.println("show "+show);

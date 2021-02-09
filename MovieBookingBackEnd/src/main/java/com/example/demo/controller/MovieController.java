@@ -13,6 +13,7 @@ import com.example.demo.modal.Movies;
 import com.example.demo.service.MovieService;
 
 
+
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
 public class MovieController
@@ -22,11 +23,11 @@ public class MovieController
 	
 	
 	@PostMapping("/addmovie")
-	Movies addMovie(@RequestBody Movies movie)
+	List<Movies> addMovie(@RequestBody List<Movies> movies)
 	{
-		System.out.println("movie");
-		System.out.println(movie);
-		return movieService.addMovie(movie);
+		System.out.println("addMovie fun called");
+//		System.out.println(movies);
+		return movieService.addMovie(movies);
 	}
 	
 	@GetMapping("/getmovielist")
