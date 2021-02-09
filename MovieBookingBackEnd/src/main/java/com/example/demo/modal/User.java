@@ -1,24 +1,40 @@
 package com.example.demo.modal;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class User 
 {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "userid")
 	Integer userId;
 	
+	@Column(name = "username", length=100 , nullable = false)
 	String userName;
 	
+	@Column(name="password",length = 100, nullable = false)
 	String userPassword;
 	
+	@Column(name="email", unique = true)
 	String email;
-	
+		
 	String phone;
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -63,6 +79,20 @@ public class User
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", userPassword=" + userPassword + ", email="
 				+ email + ", phone=" + phone + "]";
+	}
+
+	public User(Integer userId, String userName, String userPassword, String email, String phone) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.email = email;
+		this.phone = phone;
+	}
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	
