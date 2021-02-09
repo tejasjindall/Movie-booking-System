@@ -26,10 +26,17 @@ public class TheatreService {
 	
 	public void AddTheatreRepo( )
 	{	
-		String theatrename = "CinePlex";
-		Integer zipcode = 422003;		//check that its available in city table;
-		Integer totalscreens = 8;
-		int[] totalSeatsArray = new int[]{ 50 , 50 , 70  , 60 , 50 ,80 , 50 , 80}; 
+
+		
+String theatrename = "SagarTheatre";
+		Integer zipcode = 556644;		//check that its available in city table;
+		Integer totalscreens = 6;
+		int[] totalSeatsArray = new int[]{ 44,25,55,33,44,55}; 
+		
+
+		
+		
+		
 		
 		//--------------------
 
