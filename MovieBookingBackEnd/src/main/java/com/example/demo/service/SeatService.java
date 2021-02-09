@@ -35,11 +35,10 @@ public class SeatService {
 		return showSeats;		
 	}
 
-	public void setSeat(List<Seat> seats) 
+	public List<MySeat> setSeat(List<MySeat> seats) 
 	{
-	
-		System.out.println();
-		for(Seat seat : seats)
+		Seat mySeat = new Seat();
+		for(MySeat seat : seats)
 		{
 			System.out.println();
 			
@@ -47,10 +46,14 @@ public class SeatService {
 			System.out.println(seat.getSeatId());
 			
 			seatRepo.bookSeat(seat.getSeatId());
+			
+			mySeat = seatRepo.getOne(seat.getSeatId());
 		}
 		
 		
+		List<MySeat> mySeatList = GetListOfSeats(mySeat.getMovieShow().getShowId());
 		
+		return mySeatList;
 	}
 	
 	

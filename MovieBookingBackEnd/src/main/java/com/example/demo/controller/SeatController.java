@@ -30,12 +30,12 @@ public class SeatController {
 	}
 	
 	@PostMapping("/setseat")
-	void selectSeat(@RequestBody List<Seat> seats)
+	List<MySeat> selectSeat(@RequestBody List<MySeat> seats)
 	{
-		
+		System.out.println("called setseat");
 		seats.forEach(System.out::println);
 		
-		seatService.setSeat(seats);
+		return seatService.setSeat(seats);
 	}
 	
 	
