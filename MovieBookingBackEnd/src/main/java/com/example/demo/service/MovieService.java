@@ -18,10 +18,13 @@ public class MovieService
 	
 	
 	
-	public Movies addMovie(Movies movie) 
+	public List<Movies> addMovie(List<Movies> movies) 
 	{
-		System.out.println(movie);
-		return repo.save(movie);
+		for (Movies movie : movies) {
+			repo.save(movie);
+			System.out.println(movie);
+		}
+		return  movies;
 	}
 
 

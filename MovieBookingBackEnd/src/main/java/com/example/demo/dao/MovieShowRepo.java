@@ -20,7 +20,7 @@ public interface MovieShowRepo extends JpaRepository<MovieShow, Integer>
 	
 	@Transactional
 	@Modifying
-	@Query(value="SELECT DISTINCT(date) FROM movieshow WHERE date > now() AND movieid = :movieid " , nativeQuery = true)
+	@Query(value="SELECT DISTINCT(date) FROM movieshow WHERE date > now() AND movieid = :movieid ORDER BY date " , nativeQuery = true)
 	List<Date> findAllByMovie(@Param("movieid") Integer movieid);
 
 

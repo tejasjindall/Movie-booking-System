@@ -27,7 +27,7 @@ public class MovieShowController
 	MovieShowService showservice;
 	
 	@PostMapping("/addshow")
-	MovieShow addMovieShow(@RequestBody ShowData showdata)
+	List<ShowData> addMovieShow(@RequestBody List<ShowData> showdata)
 	{				
 		return showservice.addShow(showdata);
 	}
