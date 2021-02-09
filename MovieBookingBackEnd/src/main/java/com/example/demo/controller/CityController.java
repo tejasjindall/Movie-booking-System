@@ -31,12 +31,14 @@ public class CityController {
 	}
 	
 	@PostMapping("/setcity")
-	public void setCity(SetCity city)
+	public SetCity setCity(SetCity city)
 	{
-
+		System.out.println(city);
 		City.setStaticCity(city.getCityname());
 		
 		System.out.println(City.getStaticCity());
+		
+		return city;
 	}
 	
 	@GetMapping("checklocation")
