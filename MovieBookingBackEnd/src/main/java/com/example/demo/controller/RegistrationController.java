@@ -29,7 +29,7 @@ public class RegistrationController
 	@PostMapping("/register")
 	public User registerUser(@RequestBody User user)
 	{
-		System.out.println("User ID : " + user.getUserName());
+		System.out.println("Registering... User ID : " + user.getUserName());
 		
 		User userObj= null;
 		
@@ -37,7 +37,7 @@ public class RegistrationController
 		
 		return userObj;
 	}
-
+	
 
 	@PostMapping("/login")
 	public User loginUser(@RequestBody User user) throws Exception
