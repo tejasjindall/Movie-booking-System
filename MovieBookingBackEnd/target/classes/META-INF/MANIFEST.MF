@@ -1,6 +1,9 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 15
 Implementation-Title: movieTest
 Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: tejas
+Implementation-Vendor-Id: com.example
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://spring.io/projects/spring-boot/movieTest
 Created-By: Maven Integration for Eclipse
 
